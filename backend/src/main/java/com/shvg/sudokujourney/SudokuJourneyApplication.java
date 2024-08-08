@@ -1,4 +1,4 @@
-package com.shvg.sudoku_journey;
+package com.shvg.sudokujourney;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
