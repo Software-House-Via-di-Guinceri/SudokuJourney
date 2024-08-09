@@ -14,7 +14,9 @@ import java.io.IOException;
 
 @Configuration
 public class FirebaseConfig {
-    private static final String SERVICE_ACCOUNT_KEY_PATH = "classpath:serviceAccountKey.json";
+
+    private static final String SERVICE_ACCOUNT_KEY_PATH = "./secrets/serviceAccountKey.json";
+
     @Bean
     public Firestore initialize() throws IOException {
         FileInputStream serviceAccount = new FileInputStream(ResourceUtils.getFile(SERVICE_ACCOUNT_KEY_PATH));
