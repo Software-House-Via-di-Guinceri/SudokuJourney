@@ -3,10 +3,13 @@ package com.shvg.sudokujourney.controller;
 import com.google.gson.JsonObject;
 import com.shvg.sudokujourney.service.GoogleService;
 import com.shvg.sudokujourney.service.database.UserService;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/v1/")
+@RequestMapping("/")
+@Slf4j
 public class AuthController {
 
     private final GoogleService googleService;
@@ -17,16 +20,9 @@ public class AuthController {
         this.userService = databaseService;
     }
 
-    @GetMapping("grantcode")
-    public String grantCode(@RequestParam("code") String code, @RequestParam("scope") String scope, @RequestParam("authuser") String authUser, @RequestParam("prompt") String prompt) {
-        JsonObject userDetails = googleService.getProfileDetailsGoogle(googleService.getOauthAccessTokenGoogle(code));
-
-        // salva se nuovo utente
-        //if (databaseService.)
-
-        // genera e restituisci access token
-
-        return "";
+    @GetMapping("login/oauth2/code/google")
+    public String login(OAuth2AuthenticationToken token) {
+        return token.getName();
     }
 
 }

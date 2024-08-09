@@ -4,6 +4,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.security.core.GrantedAuthority;
+
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -19,5 +22,6 @@ public class UserEntity {
     private String lastName;
     private String email;
     private String username;
+    private List<String> authorities;
 
 }

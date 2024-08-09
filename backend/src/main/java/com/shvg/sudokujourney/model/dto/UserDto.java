@@ -4,6 +4,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.security.core.GrantedAuthority;
+
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -17,5 +20,6 @@ public class UserDto {
     private String lastName;
     private String mail;
     private String username;
+    private List<String> authorities;
 
 }

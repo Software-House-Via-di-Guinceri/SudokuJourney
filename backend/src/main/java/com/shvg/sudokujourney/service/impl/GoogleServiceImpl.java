@@ -1,16 +1,15 @@
 package com.shvg.sudokujourney.service.impl;
 
-import com.google.api.client.util.Value;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.shvg.sudokujourney.service.GoogleService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
-
 
 @Service
 @RequiredArgsConstructor
@@ -18,9 +17,9 @@ public class GoogleServiceImpl implements GoogleService {
 
     private final RestTemplate restTemplate;
 
-    @Value("${google.client.id}")
+    @Value("${spring.security.oauth2.client.registration.google.client-id}")
     private String clientId;
-    @Value("${google.client.secret}")
+    @Value("${spring.security.oauth2.client.registration.google.client-secret}")
     private String clientSecret;
 
     @Override
@@ -30,7 +29,7 @@ public class GoogleServiceImpl implements GoogleService {
 
         MultiValueMap<String, String> params = new LinkedMultiValueMap<>();
         params.add("code", code);
-        params.add("redirect_uri", "http://localhost:8080/grantcode");
+        params.add("redirect_uri", "http://localhost:8080/api/v1/login");
         params.add("client_id", clientId);
         params.add("client_secret", clientSecret);
         params.add("scope", "https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile");
