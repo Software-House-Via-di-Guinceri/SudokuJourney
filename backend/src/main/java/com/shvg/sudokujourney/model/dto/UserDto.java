@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.security.core.GrantedAuthority;
 
 import java.util.List;
 
@@ -18,7 +17,7 @@ public class UserDto {
     private String firstName;
     @JsonProperty("last_name")
     private String lastName;
-    private String mail;
+    private String email;
     private String username;
     private List<String> authorities;
 

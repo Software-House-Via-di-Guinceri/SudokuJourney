@@ -2,14 +2,11 @@ package com.shvg.sudokujourney.service.database.impl;
 
 import com.google.cloud.firestore.CollectionReference;
 import com.google.cloud.firestore.DocumentSnapshot;
-import com.google.cloud.firestore.Filter;
 import com.google.cloud.firestore.Firestore;
 import com.shvg.sudokujourney.model.dto.UserDto;
 import com.shvg.sudokujourney.model.entity.UserEntity;
-import com.shvg.sudokujourney.service.FirestoreService;
 import com.shvg.sudokujourney.service.database.UserService;
 import com.shvg.sudokujourney.util.mapper.EntityMapper;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

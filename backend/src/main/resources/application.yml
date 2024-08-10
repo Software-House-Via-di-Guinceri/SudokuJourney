@@ -1,0 +1,13 @@
+spring:
+  profiles:
+    active: ${SPRING_PROFILE}
+  application:
+    name: Sudoku Journey
+  security:
+    oauth2:
+      resourceserver:
+        opaque-token:
+          google:
+            introspect-uri: https://www.googleapis.com
+            client-id: ${GOOGLE_CLIENT_ID}
+            client-secret: ${GOOGLE_CLIENT_SECRET}
